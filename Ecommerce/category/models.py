@@ -8,6 +8,11 @@ class Category(models.Model):
     description = models.TextField(max_length=250,blank=True)
     cat_image = models.ImageField(upload_to='photos/categories',blank=True)
 
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+
+
 
     def __str__(self):
         return self.category_name
