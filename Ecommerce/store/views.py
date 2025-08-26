@@ -14,9 +14,12 @@ def store(request, category_slug = None):
     else:
         products = Product.objects.all().filter(is_available = True)
         product_count = products.count()
-        
+
     context = {
         'products' : products,
         'product_count' : product_count,
     }
     return render(request,'store/store.html',context)
+
+def product_detail(request,category_slug,product_slug):
+    return render (request,'store/product_detail.html')
